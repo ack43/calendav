@@ -8,12 +8,18 @@ module Calendav
       @document = document
     end
 
-    def each(...)
-      responses.each(...)
+    # def each(...)
+    #   responses.each(...)
+    # end
+    def each(*args, &block)
+      responses.each(*args, &block)
     end
 
-    def xpath(...)
-      document.xpath(...)
+    # def xpath(...)
+    #   document.xpath(...)
+    # end
+    def xpath(*args, &block)
+      document.xpath(*args, &block)
     end
 
     private

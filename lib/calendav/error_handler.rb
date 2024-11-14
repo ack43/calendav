@@ -4,8 +4,11 @@ require_relative "errors"
 
 module Calendav
   class ErrorHandler
-    def self.call(...)
-      new(...).call
+    # def self.call(...)
+    #   new(...).call
+    # end
+    def self.call(*args, &block)
+      new(*args, &block).call
     end
 
     def initialize(response)

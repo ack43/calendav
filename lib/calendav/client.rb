@@ -15,7 +15,10 @@ module Calendav
     end
 
     def calendars
+      puts 'endpoint.inspect'
+      puts endpoint.inspect
       @calendars = Clients::CalendarsClient.new(self, endpoint, credentials)
+      return @calendars
     end
 
     def events
@@ -29,7 +32,9 @@ module Calendav
     def principal_url
       @principal_url ||= begin
         request = Requests::CurrentUserPrincipal.call
+        puts request.to_xml
         response = endpoint.propfind(request.to_xml).first
+        puts response.inspect
 
         ContextualURL.call(
           credentials.host,

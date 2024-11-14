@@ -3,8 +3,8 @@ AllCops:
   NewCops: enable
   SuggestExtensions: false
 
-Gemspec/DevelopmentDependencies:
-  Enabled: false
+# Gemspec/DevelopmentDependencies:
+#  Enabled: false
 
 Layout/LineLength:
   Max: 80

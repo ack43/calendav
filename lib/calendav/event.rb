@@ -29,6 +29,9 @@ module Calendav
       attributes.dup
     end
 
+    # def uid
+    #   inner_event.uid
+    # end
     def summary
       inner_event.summary
     end
@@ -45,6 +48,10 @@ module Calendav
       inner_event.dtend
     end
 
+    def color
+      inner_calendar.color
+    end
+
     def unloaded?
       calendar_data.nil?
     end
@@ -54,11 +61,11 @@ module Calendav
     attr_reader :attributes
 
     def inner_calendar
-      Icalendar::Calendar.parse(calendar_data).first
+      @calendar ||= Icalendar::Calendar.parse(calendar_data).first
     end
 
     def inner_event
-      @inner_event = inner_calendar.events.first
+      @inner_event ||= inner_calendar.events.first
     end
   end
 end

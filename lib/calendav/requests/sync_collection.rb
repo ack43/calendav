@@ -7,8 +7,11 @@ require_relative "../namespaces"
 module Calendav
   module Requests
     class SyncCollection
-      def self.call(...)
-        new(...).call
+      # def self.call(...)
+      #   new(...).call
+      # end
+      def self.call(*args, &block)
+        new(*args, &block).call
       end
 
       def initialize(token)
