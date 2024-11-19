@@ -48,6 +48,10 @@ module Calendav
       inner_event.dtend
     end
 
+    def description
+      inner_event.description
+    end
+
     def color
       inner_calendar.color
     end
